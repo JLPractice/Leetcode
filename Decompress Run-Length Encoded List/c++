@@ -1,0 +1,33 @@
+NOT GOOD, have to consider the size of nums:
+
+class Solution {
+public:
+    vector<int> decompressRLElist(vector<int>& nums) {
+        vector<int> out; 
+        for(int i = 0;i < nums[0];i++){
+            out.push_back(nums[1]);
+        }
+        for(int i = 0;i < nums[2];i++){
+            out.push_back(nums[3]);
+        }
+        return out;
+        
+    }
+}; 
+
+BETTER SOLUTION
+
+class Solution {
+public:
+    vector<int> decompressRLElist(vector<int>& nums) {
+        vector<int> out; 
+        int n = nums.size();
+        
+        for(int i=0;i<n;i+=2){
+            for(int j=0;j<nums[i];j++){
+                out.push_back(nums[i+1]);
+            }
+        }
+        return out;
+    }
+};
