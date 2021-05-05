@@ -1,0 +1,16 @@
+object Solution {
+    def numberOfSteps(num: Int): Int = {
+    var ans:Int=0;
+    var number=num;
+    while(number!=0){
+      if(number%2==0){
+        number=number/2;
+        ans=ans+1
+      } else {
+        number=number-1;
+        ans=ans+1
+      }
+    }
+    ans
+  }
+}
