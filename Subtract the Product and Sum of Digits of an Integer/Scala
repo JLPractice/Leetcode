@@ -1,0 +1,14 @@
+object Solution {
+    def subtractProductAndSum(n: Int): Int = {
+      val s:Array[Char] = n.toString.toArray;
+      var ans:Int=0;
+      var P:Int=1;
+      var Sum:Int=0;
+      for (a<- s){
+        P=P*a.toString.toInt
+        Sum=Sum+a.toString.toInt
+      }
+      ans=P-Sum
+      ans
+    }
+}
