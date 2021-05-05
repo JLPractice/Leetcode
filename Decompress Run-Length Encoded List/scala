@@ -1,0 +1,13 @@
+import scala.collection.mutable.ArrayBuffer
+object Solution {
+    def decompressRLElist(nums: Array[Int]): Array[Int] = {
+    var ans=ArrayBuffer[Int]();
+    for(a<-0 until nums.length by 2){
+      var count:Int = nums(a);
+      for (b <- 1 to count){
+        ans += nums(a+1)
+      }
+    }
+    ans.toArray
+  }
+}
