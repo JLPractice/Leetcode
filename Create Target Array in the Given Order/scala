@@ -1,0 +1,11 @@
+import scala.collection.mutable.ArrayBuffer
+object Solution {
+    def createTargetArray(nums: Array[Int], index: Array[Int]): Array[Int] = {
+    var ans=ArrayBuffer[Int]();
+    for (a<-0 to nums.length-1){
+      ans.insert(index(a),nums(a))
+    }
+    ans.toArray
+  }
+
+}
