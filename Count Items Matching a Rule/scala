@@ -1,0 +1,12 @@
+object Solution {
+    def countMatches(items: List[List[String]], ruleKey: String, ruleValue: String): Int = {
+      val rules:Map[String, Int] = Map("type" -> 0, "color" -> 1, "name" -> 2)
+      var ans:Int=0;
+      for(a <- items){
+        if(a(rules(ruleKey))==ruleValue){
+          ans=ans+1
+        }
+      }
+      ans
+    }
+}
