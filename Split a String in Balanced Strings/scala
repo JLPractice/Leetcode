@@ -1,0 +1,9 @@
+object Solution {
+    def balancedStringSplit(s: String): Int =     
+        s.foldLeft((0, 0))((acc, ch) => acc match {
+            case (1, count) if ch == 'L' => (0, count + 1)
+            case (-1, count) if ch == 'R' => (0, count + 1)
+            case (flag, count) if ch == 'R' => (flag + 1, count)
+            case (flag, count) if ch == 'L' => (flag - 1, count)
+        })._2 
+}
