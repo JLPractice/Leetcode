@@ -1,0 +1,34 @@
+class Solution {
+public:
+    bool checkIfPangram(string sentence) {
+        int count[26]={0};
+        for(int i=0;i<26;i++){
+            for(int j=0;j<sentence.size();j++){
+                if(sentence[j] == 97+i) count[i]++;
+            }
+            if (count[i] ==0) {
+                return false;
+                break;
+            }
+        }
+        return true;
+        
+    }
+};
+
+
+////better solution
+
+bool checkIfPangram(string sentence) {
+        set<int> s;
+        for (auto& c: sentence)
+            s.insert(c);
+        return s.size() == 26;
+}
+
+//////
+
+bool checkIfPangram(string s) {
+        return set<char>(s.begin(), s.end()).size() == 26;
+}
+    
